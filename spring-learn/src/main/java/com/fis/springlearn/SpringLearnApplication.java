@@ -40,6 +40,7 @@ public class SpringLearnApplication {
 	static void displayCountry() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
 		Country country = (Country) context.getBean("countryIN", Country.class);
+		Country anotherCountry = context.getBean("countryIN", Country.class);
 		LOGGER.debug("Country : {}", country.toString());
 	}
 }

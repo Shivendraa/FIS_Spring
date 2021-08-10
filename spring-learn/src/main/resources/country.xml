@@ -5,14 +5,20 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
         
      <!-- Country country = new Country(); -->
-	<bean id="countryIN" class="com.fis.springlearn.Country">
+	<bean id="countryIN" class="com.fis.springlearn.Country" scope="prototype">
 		<property name="code" value="IN" />
 		<property name="name" value="India" />
 	</bean>
-	<bean id="country2" class="com.fis.springlearn.Country">
+	<bean id="countryUS" class="com.fis.springlearn.Country">
 		<property name="code" value="US" />
 		<property name="name" value="America" />
 	</bean>
-
-
+	<bean id="countryJP" class="com.fis.springlearn.Country">
+		<property name="code" value="JP" />
+		<property name="name" value="Japan" />
+	</bean>
+	<bean id="countryPK" class="com.fis.springlearn.Country">
+		<property name="code" value="PK" />
+		<property name="name" value="Pakistan" />
+	</bean>
 </beans>
