@@ -2,6 +2,7 @@ package com.fis.springlearn.bean.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fis.springlearn.bean.dao.EmployeeDao;
 
@@ -13,7 +14,8 @@ public class EmployeeService {
 	public EmployeeService() {
 		LOGGER.debug("Inside Employee Service");
 	}
-
+	
+	@Autowired
 	public void setEmployeeDao(EmployeeDao employeeDao) {
 		this.employeeDao = employeeDao;
 	}
