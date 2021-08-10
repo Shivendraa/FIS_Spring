@@ -21,4 +21,16 @@
 		<property name="code" value="PK" />
 		<property name="name" value="Pakistan" />
 	</bean>
+	
+	<bean id="countryList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="countryIN" />
+				<ref bean="countryUS" />
+				<ref bean="countryJP" />
+				<ref bean="countryPK" />
+			</list>
+		</constructor-arg>
+	</bean>
+	
 </beans>
