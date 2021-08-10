@@ -12,15 +12,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.fis.springlearn.bean.Employee;
+
 @SpringBootApplication
 public class SpringLearnApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(SpringLearnApplication.class);
 	public static void main(String[] args) {
 		SpringApplication.run(SpringLearnApplication.class, args);
-		displayDate();
-		displayCountry();
-		displayCountries();
+		//displayDate();
+		//displayCountry();
+		//displayCountries();
+		displayEmployee();
 	}
 	static void displayDate()  {
 		LOGGER.info("Start");
@@ -53,5 +56,11 @@ public class SpringLearnApplication {
 		for(Country c : countries) {
 			LOGGER.debug("Country : {}", c.toString());
 		}
+	}
+	
+	static void displayEmployee() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("employee.xml");
+		Employee emp = (Employee) context.getBean("employee",Employee.class);
+		LOGGER.debug("Employee : {}", emp.toString());
 	}
 }
