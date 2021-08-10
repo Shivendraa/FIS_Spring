@@ -24,7 +24,7 @@ public class SpringLearnApplication {
 		//displayDate();
 		//displayCountry();
 		//displayCountries();
-		displayEmployee();
+		//displayEmployee();
 		getEmployeeController();
 	}
 	static void displayDate()  {
