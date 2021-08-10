@@ -13,6 +13,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.fis.springlearn.bean.Employee;
+import com.fis.springlearn.bean.EmployeeController;
 
 @SpringBootApplication
 public class SpringLearnApplication {
@@ -24,6 +25,7 @@ public class SpringLearnApplication {
 		//displayCountry();
 		//displayCountries();
 		displayEmployee();
+		getEmployeeController();
 	}
 	static void displayDate()  {
 		LOGGER.info("Start");
@@ -63,4 +65,13 @@ public class SpringLearnApplication {
 		Employee emp = (Employee) context.getBean("employee",Employee.class);
 		LOGGER.debug("Employee : {}", emp.toString());
 	}
+	
+	static void getEmployeeController() {
+		LOGGER.info("START");
+		ApplicationContext context = new ClassPathXmlApplicationContext("employee.xml");
+		EmployeeController employeeController = context.getBean("controller", EmployeeController.class);
+		LOGGER.debug("EmployeeController : {}", employeeController);
+		LOGGER.info("END");
+	}
+	
 }
